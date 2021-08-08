@@ -64,6 +64,7 @@ void* philo_thread(void* args);
 void* monitor_thread(void* args);
 int	f(const char *str);
 int	pars(int argc, char **a);
+void *wh_table(int i, struct timeval curr, int nFullPhilos);
 
 
 
