@@ -18,7 +18,8 @@ static	int	poluch_chisl2(const char *st, int z)
 		slo = slo * 10 + *(st) - '0';
 		st++;
 	}
-	return (slo * z);
+	slo = slo * z;
+	return (slo);
 }
 
 static	int	ft_isspace(int c)
@@ -27,6 +28,7 @@ static	int	ft_isspace(int c)
 		return (1);
 	return (0);
 }
+// f = atoi
 
 int	f(const char *str)
 {

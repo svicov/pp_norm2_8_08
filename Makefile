@@ -1,6 +1,7 @@
 NAME = philo
 
-SRCS = main_all.c forks2.c philos2.c table2.c f_phil2.c f_monitor.c ft_atoi.c
+SRCS = main_all.c forks2.c philos2.c table2.c new_fphil2.c f_monitor222.c ft_atoi.c
+#SRCS = main_all.c forks2.c philos2.c table2.c f_phil2.c f_monitor222.c ft_atoi.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,7 +20,7 @@ $(NAME): $(OBJS)
 	$(CC) -c $(CFLAGS) $< -o $(<:.c=.o)
 
 clean: 
-		$(RM) $(OBJC)
+		$(RM) $(OBJS)
 
 fclean:		clean
 		$(RM) $(NAME)

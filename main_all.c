@@ -10,7 +10,7 @@ int	main(int argc, char **a)
 	{
 		pthread_create(&(g_table.philos[i].thread), NULL,
 			philo_thread, &g_table.philos[i]);
-		usleep(50);
+		usleep(80);
 		i++;
 	}
 	pthread_create(&g_table.monitor, NULL, monitor_thread, NULL);
@@ -27,17 +27,12 @@ int	main(int argc, char **a)
 
 int	pars(int argc, char **a)
 {
-	if (argc == 5)
-		table_init(&g_table, f(a[1]), f(a[2]), f(a[3]), f(a[4]), 0);
-	else if (argc == 6)
-		{
-			table_init(&g_table, f(a[1]), f(a[2]), f(a[3]), f(a[4]), f(a[5]));
-			return (0);
-		}		
-		else
-		{
-			printf("invalid arg\n");
-			return (1);
-		}
-	return (0);	
+	if (argc == 5 || argc == 6)
+		table_init(&g_table, argc, a);
+	else
+	{
+		printf("invalid arg\n");
+		return (1);
+	}
+	return (0);
 }
